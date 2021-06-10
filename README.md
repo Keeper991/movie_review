@@ -19,7 +19,7 @@
 
 
 
-![main]([Imgur](https://i.imgur.com/ZwETpQQ.png))
+![main](https://i.imgur.com/ZwETpQQ.png)
 
 
 
