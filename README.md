@@ -7,17 +7,19 @@
 
 
 **url**
+
 *http://breadman.shop/*
 (주소는 언제든지 변경될 수 있습니다..)
 
 
 
 **notion**
+
 *https://www.notion.so/KINO-1ef56ecdf13b49a5b2f2074fe5ba1330*
 
 
 
-![main](/Users/bandor/Documents/Sparta/chap1/kino/static/images/main.png)
+![main]([Imgur](https://i.imgur.com/ZwETpQQ.png))
 
 
 
