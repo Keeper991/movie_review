@@ -1,0 +1,73 @@
+.title {
+}
+
+.movie-img {
+    width: 600px;
+    height: 700px;
+
+    background-position: center;
+    background-size: cover;
+
+    padding-bottom: 30px;
+}
+
+.wrap {
+    width: 600px;
+    margin: auto;
+}
+
+.starR {
+    padding: 5px 0px 0px 0px;
+    background: url('/static/images/star.png') no-repeat right 0;
+    background-size: auto 100%;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.starR.on {
+    background-position: 0 0;
+}
+
+.summary {
+    padding: 0px 0px 50px 0px;
+}
+
+.member {
+    font-size: small;
+    color: gray;
+}
+
+.mb-3 {
+    padding: 40px 0px 30px 0px;
+}
+
+.hr1 {
+    /*padding: 0px 0px 30px 0px;*/
+    border: 0;
+    height: 3px;
+    background: #ccc;
+}
+
+.form-select {
+    text-align-last: center;
+}
+
+.btn-warning {
+    background-color: #C49A6C;
+    border-color: #C49A6C;
+}
+
+
+.my-review {
+    width: 600px;
+    height: 100px;
+}
+
+.h3class {
+    font-size: x-large;
+    font-weight: bold;
+    padding-bottom: 20px;
+}

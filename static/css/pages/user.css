@@ -1,0 +1,104 @@
+#user-main {
+    margin: 3em;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#user-info {
+    width: 100%;
+    padding: 1em 8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.user-info__column:first-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#avatar-label {
+    padding: .25em .5em;
+    text-align: center;
+    width: 3em;
+    background-color: #C49A6C;
+    margin-top: 1em;
+}
+
+
+#avatar-wrap {
+    width: 8em;
+    height: 8em;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+
+#user__avatar {
+    position: absolute;
+    width: 15em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#avatar-input {
+    display: none;
+}
+
+.user-info__column:last-child {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.user-info__column:last-child label {
+    font-size: 1rem;
+    color: #7f8c8d;
+    line-height: .5;
+}
+
+#user__nick-edit-btn {
+    margin-left: 1em;
+    font-size: 1rem;
+    padding: .25em .75em;
+}
+
+#user__nickname {
+    display: flex;
+    align-items: center;
+}
+
+#reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2em;
+}
+
+#reviews table {
+    width: 80%;
+}
+
+#reviews thead {
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+#reviews thead td:nth-child(2) {
+    width: 50%;
+}
+
+tr {
+    text-align: center;
+}
+
+td {
+    height: 1.5em;
+}

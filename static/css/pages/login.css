@@ -1,0 +1,43 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+}
+
+.section {
+    padding: 1rem 1.5rem;
+    max-width: 750px;
+    margin: auto;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 5rem;
+}
+
+.subtitle {
+    font-size: 2rem;
+}
+
+.is-sparta {
+    color: #C49A6C !important;
+}
+
+.button.is-sparta {
+    background-color: #C49A6C;
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.button.is-sparta.is-outlined {
+    background-color: transparent;
+    border-color: #C49A6C;
+    color: #C49A6C !important;
+}
+
+.help {
+    color: gray;
+}

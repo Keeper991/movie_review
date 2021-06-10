@@ -1,0 +1,40 @@
+header {
+    padding: 1em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header__logo img {
+    height: 3em;
+}
+
+
+#header__user-info {
+    display: flex;
+    align-items: center;
+}
+
+#header__user-info > * {
+    margin-right: 1em;
+}
+
+#header__username {
+    font-weight: 800;
+}
+
+#header__user-info a {
+    position: relative;
+    width: 3em;
+    height: 3em;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#header__user-info a img {
+    position: absolute;
+    width: 6em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

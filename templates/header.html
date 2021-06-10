@@ -1,0 +1,14 @@
+<header id="header">
+    <div id="header__logo">
+        <a href="/">
+            <img src="static/images/logo_yellow.png" alt="logo">
+        </a>
+    </div>
+    <div id="header__user-info">
+        <div id="header__hello">안녕하세요, <span id="header__username">{{ user_info['user_nick'] }}</span>님</div>
+        <a href="/user?id={{ user_info['user_id'] }}">
+            <img src="static/images/avatars/{{ user_info['user_img'] }}" alt="avatar">
+        </a>
+        <button id="header__logout-btn">로그아웃</button>
+    </div>
+</header>

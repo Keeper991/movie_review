@@ -17,17 +17,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <!--  tags which pages need  -->
+    <!-- Link tags  -->
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/pages/{{ page_name }}.css">
     {% block header %}
     {% endblock %}
     <!--  title  -->
     <title>{% block title %}{% endblock %} - KINO</title>
 </head>
 <body>
-    <header id="header"></header>
+    {% if token_err_msg is not undefined %}
+    <script>
+        alert("{{ token_err_msg }}")
+        $.removeCookie('mytoken');
+        window.location.href = `${window.location.origin}/login`;
+    </script>
+    {% else %}
+    {% include "header.html" %}
     {% block content %}
     {% endblock %}
     <script src="static/js/header.js"></script>
+    <script src="static/js/{{ page_name }}.js"></script>
+    {% endif %}
 </body>
 </html>

@@ -1,0 +1,79 @@
+{% extends "layouts/layout.html" %}
+{% block title %}Detail{% endblock %}
+{% block content %}
+<div class="wrap">
+    <p>
+    <h2 class="title" align="center">{{ movie_info['movie_title'] }}</h2>
+    </p>
+
+    <img class="movie-img" src={{ movie_info['movie_img'] }}>
+
+    <p class="summary">
+    <h3 class="h3class">줄거리</h3>
+    {{ movie_info['movie_desc'] }}
+    </p>
+
+    <hr class="hr1">
+
+    {% if review_exist == false %}
+        <div class="input-group mb-3">
+            <select class="form-select" id="inputs">
+                <option selected>별점</option>
+                <option value="1">1점 ★</option>
+                <option value="2">2점 ★★</option>
+                <option value="3">3점 ★★★</option>
+                <option value="4">4점 ★★★★</option>
+                <option value="5">5점 ★★★★★</option>
+            </select>
+            <input type="text" class="form-control" id="description" placeholder="감상평을 남겨주세요.">
+            <div align="right">
+                <button type="button" onclick="saving_review()" id="button-color" class="btn btn-warning">확인</button>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="starRev">
+        {#   서버로 받아온 유저아이디가 리뷰테이블의 유저아이디와 일치하는 것이 있는 경우 상단에 표시   #}
+        {% if review_exist != false %}
+            <div class="my-review">
+                <div style="float: left">
+                    <h6 id="star-padding">별점 <span class="starR">별1</span><span
+                            class="starR">별2</span><span
+                            class="starR">별3</span><span
+                            class="starR">별4</span><span class="starR">별5</span></h6>
+                    (<span>{{ my_review['review_star'] }}</span>)
+                    <h6>{{ my_review['review_desc'] }}</h6>
+                    <h6 class="member-using">아이디: {{ my_review['review_user'] }}</h6>
+                </div>
+                <div style="float: right;">
+                    <button type="button" onclick="modify_review(event)" id="button-color"
+                            class="btn btn-warning">수정
+                    </button>
+                    <button type="button" onclick="handleReviewDelBtn()" id="button-color" class="btn btn-warning">삭제
+                    </button>
+                </div>
+
+            </div>
+            <hr>
+        {% endif %}
+        {#   서버로 받아온 유저아이디가 리뷰테이블의 유저아이디와 일치하는 것이 없는 경우 밑에 표시   #}
+        {% for review in reviews %}
+            {% if review['review_user'] != user_info['user_id'] %}
+                <div class="other_review">
+                    <h6 class="star-padding">별점
+                        <span class="starR">별1</span>
+                        <span class="starR">별2</span>
+                        <span class="starR">별3</span>
+                        <span class="starR">별4</span>
+                        <span class="starR">별5</span>
+                    </h6>
+                    (<span class="star-val">{{ review['review_star'] }}</span>)
+                    <h6>{{ review['review_desc'] }}</h6>
+                    <h6 class="member">아이디: {{ review['review_user'] }}</h6>
+                    <hr>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

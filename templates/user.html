@@ -1,0 +1,64 @@
+{% extends "layouts/layout.html" %}
+{% block title %}My Page{% endblock %}
+{% block content %}
+<main id="user-main">
+  <section id="user-info">
+    <div class="user-info__column">
+      <div id="avatar-wrap">
+        <img
+                id="user__avatar"
+                {% if user_info['user_img'] != "" %}
+        src="static/images/avatars/{{ user_info['user_img'] }}"
+        {% else %}
+        src="static/images/avatars/default.png"
+        {% endif %}
+        alt="avatar"
+        />
+      </div>
+      <label id="avatar-label" for="avatar-input">수정</label>
+      <input type="file" id="avatar-input" />
+    </div>
+    <div class="user-info__column">
+      <label for="user__id">ID</label>
+      <div id="user__id">{{ user_info['user_id'] }}</div>
+      <label for="user__nickname">Nickname</label>
+      <div id="user__nickname">
+        <span>{{ user_info['user_nick'] }}</span>
+        <button id="user__nick-edit-btn">수정</button>
+      </div>
+<!--      <button id="user__delete">회원탈퇴</button>-->
+    </div>
+  </section>
+  <section id="reviews">
+    <table id="review-table">
+      <thead id="review__thead">
+        <tr>
+          <td>영화이름</td>
+          <td>작성한 리뷰</td>
+          <td>평점</td>
+          <td>수정 및 삭제</td>
+        </tr>
+      </thead>
+      <tbody id="review__tbody">
+        {% for review in reviews %}
+        <tr>
+          <td>
+            <a href="/detail?id={{review['review_movie']}}"
+              >{{ review['movie_title'] }}</a
+            >
+          </td>
+          <td class="review__desc">{{ review['review_desc'] }}</td>
+          <td class="review__star">{{ review['review_star'] }}</td>
+          <td>
+            <button class="review__edit-btn">수정</button>
+            <button class="review__del-btn">삭제</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  <section id="modal">
+  </section>
+</main>
+{% endblock %}
